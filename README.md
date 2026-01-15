@@ -1,8 +1,13 @@
 # Linformer Vision Transformer pretraining on CIFAR-100, finetuning on CIFAR-10
 
-## What this notebook contains
+## Overview
 
 This notebook trains a Linformer-based vision transformer on CIFAR-100, then adapts and finetunes the same backbone on CIFAR-10 by replacing the classification head.
+
+Transformers typically rely on full self-attention, which scales quadratically with sequence length.  
+Linformer addresses this limitation by using low-rank projections of the attention matrix, reducing both memory usage and computation cost.
+
+This makes Linformer a practical alternative for vision tasks where input sequences (image patches) can be long.
 
 It includes dataset setup, model definition, training loops, validation, and final test evaluation for both datasets.
 
